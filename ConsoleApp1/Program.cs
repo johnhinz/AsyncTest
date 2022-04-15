@@ -2,10 +2,10 @@
 
     Stopwatch sw = new Stopwatch();
     sw.Start();
-    Task<int> result = DoSomeCalculationAsync().Result;
+    Task<int> result = DoSomeCalculationAsync();
     sw.Stop();
 
-    Console.WriteLine($"{result} took {sw.Elapsed.TotalSeconds}");
+    Console.WriteLine($"{result.Result} took {sw.Elapsed.TotalSeconds}");
 
     async Task<int> DoSomeCalculationAsync()
     {
